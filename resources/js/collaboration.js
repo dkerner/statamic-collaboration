@@ -35,6 +35,6 @@ Statamic.$events.$on('publish-container-destroyed', container => {
     manager.destroyWorkspace(container);
 });
 
-window.addEventListener('unload', () => {
+window.addEventListener('pagehide', () => {
     Object.keys(manager.workspaces).forEach(name => manager.destroyWorkspace({ name }));
 });
